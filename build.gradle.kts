@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "site.remlit.blueb"
-version = "1.2-SNAPSHOT"
+version = "1.3-SNAPSHOT"
 
 repositories {
 	mavenCentral()
@@ -17,8 +17,8 @@ repositories {
 
 dependencies {
 	// Only needed for compilation, all this code will already be present when run by Aster
-	compileOnly("site.remlit.blueb:aster:2025.10.4.2-SNAPSHOT")
-	compileOnly("site.remlit.blueb.aster:common-jvm:2025.10.4.2-SNAPSHOT")
+	compileOnly("site.remlit.blueb:aster:2025.10.5.0-SNAPSHOT")
+	compileOnly("site.remlit.blueb.aster:common-jvm:2025.10.5.0-SNAPSHOT")
 
 	// Most dependencies will already be used in Aster.
 	// You can choose to include them with implementation, but it's recommended you don't
@@ -30,6 +30,14 @@ dependencies {
 // Prevent Ktor plugin from trying to make a jar for a standalone application
 tasks.withType<ShadowJar> {
 	enabled = false
+}
+
+tasks.processResources {
+	filesMatching("plugin.json") {
+		filter { line ->
+			line.replace("%version%", project.provider { project.version.toString() }.get())
+		}
+	}
 }
 
 kotlin {

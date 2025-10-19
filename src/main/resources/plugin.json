@@ -1,5 +1,6 @@
 {
   "name": "TestPlugin",
+  "version": "%version%",
   "mainClass": "site.remlit.blueb.asterTestPlugin.TestPlugin",
   "authors": [ "blueb" ]
 }
