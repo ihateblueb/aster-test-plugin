@@ -17,7 +17,8 @@ repositories {
 
 dependencies {
 	// Only needed for compilation, all this code will already be present when run by Aster
-	compileOnly("site.remlit.blueb:aster:2025.10.2.0-SNAPSHOT")
+	compileOnly("site.remlit.blueb:aster:2025.10.4.2-SNAPSHOT")
+	compileOnly("site.remlit.blueb.aster:common-jvm:2025.10.4.2-SNAPSHOT")
 
 	// Most dependencies will already be used in Aster.
 	// You can choose to include them with implementation, but it's recommended you don't
