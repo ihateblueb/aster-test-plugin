@@ -24,7 +24,11 @@ dependencies {
 	// You can choose to include them with implementation, but it's recommended you don't
 	compileOnly("ch.qos.logback:logback-classic:1.5.18")
 	compileOnly("org.slf4j:slf4j-api:2.0.17")
+
+	// Needed for routing
 	compileOnly("io.ktor:ktor-server-core:3.3.1")
+	// Needed for database queries
+	compileOnly("org.jetbrains.exposed:exposed-core:1.0.0-rc-1")
 }
 
 // Prevent Ktor plugin from trying to make a jar for a standalone application
